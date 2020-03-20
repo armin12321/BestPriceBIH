@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_^kz0zsw29+)oov!oa0977uld5-6db1=cbl-sh@=7nixvbv1pl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['armin12213.pythonanywhere.com']
+ALLOWED_HOSTS = ['armin12213.pythonanywhere.com','*']
 
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
