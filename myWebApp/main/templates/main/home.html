@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <!--Link za css da bi sintaksa za kod svijetlila -->
+    <link href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
+    <link href="{% static 'main/css/materialize.min.css' %}" rel="stylesheet">
+    <title>Pocetna Stranica</title>
+</head>
+<body>
+    <div class="container">
+        <br><br><br>
+        <div class="row valign-wrapper">
+            {% for proizvod in Proizvodi %}
+            <div class="col s6 m6">
+                <a href="https:google.com">
+                    <div class="card hoverable">
+                        <div class="card content black-text" style="padding:15%">
+                            <span class="card-title">{{proizvod.productName}}  -  {{proizvod.productCost}} KM</span>
+                            <p>{{proizvod.productDescription|safe}}</p>
+                            <div class="card-action">
+                                <p>{{proizvod.datePublished}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+        </div>
+
+    </div>
+    <script src="{% static 'tinymce/js/prism.js' %}"></script>
+    <script src="{% static 'main/js/materialize.min.js' %}"></script>
+</body>
+</html>
