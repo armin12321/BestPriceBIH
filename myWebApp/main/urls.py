@@ -20,5 +20,4 @@ imeAplikacije = "main"
 
 urlpatterns = [
     path("", views.homepage, name="homepage")
-    path("armin/", views.homepage, name="second-homapge") 	
 ]
