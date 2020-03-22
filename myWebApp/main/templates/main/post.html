@@ -1,0 +1,76 @@
+{% extends 'main/header.html' %}
+
+{% block naslov %}
+    <title>Objavi proizvod</title>
+{% endblock %}
+
+{% block sadrzaj_stranice%}
+<div style="padding:3%;">
+    <h2>
+        Kako objava artikla radi?
+    </h2>
+    <br><br>
+    <h5>
+        Na ovoj stranici možete postaviti novu cijenu za određeni proizvod,
+        ili dodati nepostojeći proizvod.Ako dodate nepostojeći proizvod, napravit ćemo novi proizvod u bazi,
+        a ukoliko dodate postojeći, uporedićemo cijenu već postojećeg sa onim koji ste vi unijeli, te ćemo zapamtiti
+        onaj koji je jeftiniji, odnosno onaj koji ima bolje specifikacije za manju novčanu vrijednost.Također molimo da unosite cijene u komvertibilnim markama(KM).
+    </h5>
+    <br><br>
+
+    {% if poruka == "novi_artikal" %}
+        <h6 style="color:green">
+            Unijeli ste novi artikal.Uspješno je zapamćen...
+        </h6>
+    {% endif %}
+
+    {% if poruka == "stari_artikal" %}
+        <h6 style="color:green">
+            Unijeli ste već postojeći aritkal.Evaluacija je izvršena...
+        </h6>
+    {% endif %}
+
+    <br><br>
+    <h2>
+        Objavi artikal:
+    </h2>
+    <br><br>
+      <div class="row">
+    <form class="col s12" method="POST">{% csrf_token %}
+      <div class="row">
+        <div class="input-field col s12">
+          <input required="required" name="vrsta_artikla" id="vrsta" type="text" class="validate">
+          <label for="vrsta">Vrsta artikla (prehrambeni, odjevni, sportski...)</label>
+        </div>
+        <div class="input-field col s12">
+          <input required="required" name="ime_artikla" id="ime" type="text" class="validate">
+          <label for="ime">Ime artikla</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="proizvodjac_artikla" required="required""id="disabled" type="text" class="validate">
+          <label for="disabled">Proizvođač (npr argeta, nike, giorgio armani...)</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="cijena_artikla" required="required" id="password" type="number" min="0.1" step="0.05" class="validate">
+          <label for="password">Cijena(KM)</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input name="trgovina_artikla" required="required" id="email" type="text" class="validate">
+          <label for="email">Trgovina (npr best, bingo, sportvision, intersport...)</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12" style="text-align:center">
+          <input id="emaila" type="submit" class="btn" value="Objavi">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

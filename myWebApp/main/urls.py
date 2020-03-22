@@ -19,5 +19,8 @@ from main import views
 imeAplikacije = "main"
 
 urlpatterns = [
-    path("", views.homepage, name="homepage")
+    path("", views.homepage, name="homepage"),
+    path("search/", views.search, name="search"),
+    path("post/", views.post, name="post"),
+    path("about/", views.about, name="about")
 ]
