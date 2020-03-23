@@ -1,0 +1,62 @@
+{% extends 'main/header.html' %}
+
+{% block naslov %}
+    <title>
+        Rezultati pretrage
+    </title>
+{% endblock %}
+
+{% block sadrzaj_stranice %}
+    <div style="padding:3%">
+        {% if proizvodi == "nema_artikala" %}
+
+            <br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br>
+            <h5 style="text-align:center;color:red;">
+                Nema artikala koji se poklapaju sa pretragom.
+            </h5>
+            <br><br><br>
+            <br><br><br><br><br><br><br><br><br><br><br><br>
+
+        {% else %}
+
+            <h4 style="text-align:center;">
+                Proizvodi
+            </h4>
+
+        <table class="highlight">
+
+            <thead>
+
+              <tr>
+                  <th>Ime</th>
+                  <th>Tip</th>
+                  <th>Proizvođač</th>
+                  <th>Trgovina</th>
+                  <th>Cijena (KM)</th>
+              </tr>
+
+            </thead>
+
+            <tbody>
+
+              {% for proizvod in proizvodi %}
+
+                <tr>
+                    <td>{{ proizvod.ime }}</td>
+                    <td>{{ proizvod.vrsta }}</td>
+                    <td>{{ proizvod.proizvodjac }}</td>
+                    <td>{{ proizvod.trgovina }}</td>
+                    <td>{{ proizvod.cijena }}</td>
+                </tr>
+
+              {% endfor %}
+
+            </tbody>
+        </table>
+
+        {% endif %}
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
+{% endblock %}
