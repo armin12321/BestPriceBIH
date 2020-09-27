@@ -3,6 +3,7 @@
 ## O website-u
   - Na sajt se unose informacije o određenim artiklima i njihovim cijenama
   - Na taj način se stvara sajt na kome obični ljudi mogu provjeriti najjeftinije cijene određenih proizvoda
+  - Detaljnije informacije možete pronaći na samom website-u
   
 ## Alati
   - Django
